@@ -1,0 +1,156 @@
+
+Youssfi@HP-PC MINGW64 ~/Desktop/learn_git_again (master)
+$ cd c:/Users/Youssfi/Desktop/learn_git_again
+
+Youssfi@HP-PC MINGW64 ~/Desktop/learn_git_again (master)
+$ git config --global user.name "najla-coll"
+Youssfi@HP-PC MINGW64 ~/Desktop/learn_git_again (master)
+$ git config --global user.email najla.yousfi@yahoo.com
+
+Youssfi@HP-PC MINGW64 ~/Desktop/learn_git_again (master)
+$ touch third.txt
+
+Youssfi@HP-PC MINGW64 ~/Desktop/learn_git_again (master)
+$ git init
+Initialized empty Git repository in C:/Users/Youssfi/Desktop/learn_git_again/.git/
+
+Youssfi@HP-PC MINGW64 ~/Desktop/learn_git_again (master)
+$ git add third.txt
+
+Youssfi@HP-PC MINGW64 ~/Desktop/learn_git_again (master)
+$ git commit -m "adding third.txt"
+[master (root-commit) 501b69e] adding third.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 third.txt
+
+Youssfi@HP-PC MINGW64 ~/Desktop/learn_git_again (master)
+$ git log
+commit 501b69eb6794174d7cdd31bbec866b9e7caa109b (HEAD -> master)
+Author: najla-coll <najla.yousfi@yahoo.com>
+Date:   Wed Apr 14 14:53:39 2021 +0100
+
+    adding third.txt
+
+Youssfi@HP-PC MINGW64 ~/Desktop/learn_git_again (master)
+$ touch fourth.txt
+
+Youssfi@HP-PC MINGW64 ~/Desktop/learn_git_again (master)
+$ git add fourth.txt
+
+Youssfi@HP-PC MINGW64 ~/Desktop/learn_git_again (master)
+$ git commit -m "adding fourth.txt"
+[master 26f2814] adding fourth.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 fourth.txt
+
+Youssfi@HP-PC MINGW64 ~/Desktop/learn_git_again (master)
+$ git rm third.txt
+rm 'third.txt'
+
+Youssfi@HP-PC MINGW64 ~/Desktop/learn_git_again (master)
+$ git add .
+
+Youssfi@HP-PC MINGW64 ~/Desktop/learn_git_again (master)
+$ git commit -m "removing third.txt"
+[master 4f38136] removing third.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ delete mode 100644 third.txt
+
+Youssfi@HP-PC MINGW64 ~/Desktop/learn_git_again (master)
+$ git log
+commit 4f3813673aecce23933630e1801b2124793159d0 (HEAD -> master)
+Author: najla-coll <najla.yousfi@yahoo.com>
+Date:   Wed Apr 14 14:56:16 2021 +0100
+
+    removing third.txt
+
+commit 26f28147946de9c33c49eee64fc02a28e5fdc054
+Author: najla-coll <najla.yousfi@yahoo.com>
+Date:   Wed Apr 14 14:54:57 2021 +0100
+
+    adding fourth.txt
+
+commit 501b69eb6794174d7cdd31bbec866b9e7caa109b
+Author: najla-coll <najla.yousfi@yahoo.com>
+Date:   Wed Apr 14 14:53:39 2021 +0100
+
+    adding third.txt
+
+Youssfi@HP-PC MINGW64 ~/Desktop/learn_git_again (master)
+$ git config --global core.pager cat
+
+Youssfi@HP-PC MINGW64 ~/Desktop/learn_git_again (master)
+$ git config --list
+diff.astextplain.textconv=astextplain
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+http.sslbackend=openssl
+http.sslcainfo=C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+core.autocrlf=true
+core.fscache=true
+core.symlinks=false
+pull.rebase=false
+credential.helper=manager-core
+credential.https://dev.azure.com.usehttppath=true
+init.defaultbranch=master
+user.name=najla-coll
+user.email=najla.yousfi@yahoo.com
+core.pager=cat
+core.repositoryformatversion=0
+core.filemode=false
+core.bare=false
+core.logallrefupdates=true
+core.symlinks=false
+core.ignorecase=true
+
+Youssfi@HP-PC MINGW64 ~/Desktop/learn_git_again (master)
+$ git config --global
+usage: git config [<options>]
+
+Config file location
+    --global              use global config file
+    --system              use system config file
+    --local               use repository config file
+    --worktree            use per-worktree config file
+    -f, --file <file>     use given config file
+    --blob <blob-id>      read config from given blob object
+
+Action
+    --get                 get value: name [value-pattern]
+    --get-all             get all values: key [value-pattern]
+    --get-regexp          get values for regexp: name-regex [value-pattern]
+    --get-urlmatch        get value specific for the URL: section[.var] URL
+    --replace-all         replace all matching variables: name value [value-pattern]
+    --add                 add a new variable: name value
+    --unset               remove a variable: name [value-pattern]
+    --unset-all           remove all matches: name [value-pattern]
+    --rename-section      rename section: old-name new-name
+    --remove-section      remove a section: name
+    -l, --list            list all
+    --fixed-value         use string equality when comparing values to 'value-pattern'
+    -e, --edit            open an editor
+    --get-color           find the color configured: slot [default]
+    --get-colorbool       find the color setting: slot [stdout-is-tty]
+
+Type
+    -t, --type <>         value is given this type
+    --bool                value is "true" or "false"
+    --int                 value is decimal number
+    --bool-or-int         value is --bool or --int
+    --bool-or-str         value is --bool or string
+    --path                value is a path (file or directory name)
+    --expiry-date         value is an expiry date
+
+Other
+    -z, --null            terminate values with NUL byte
+    --name-only           show variable names only
+    --includes            respect include directives on lookup
+    --show-origin         show origin of config (file, standard input, blob, command line)
+    --show-scope          show scope of config (worktree, local, global, system, command)
+    --default <value>     with --get, use default value when missing entry
+
+
+Youssfi@HP-PC MINGW64 ~/Desktop/learn_git_again (master)
+$
